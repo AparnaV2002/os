@@ -1,0 +1,62 @@
+EXPERIMENT 6
+Implementation of system calls - fork, exec, getpid, exit, wait, close, stat, opendir, readdir.
+1. SYSTEM CALLS FOR UNIX(opendir, closedir)
+
+PROGRAM:
+#include<stdio.h>
+#include<dirent.h>
+#include<stdlib.h>
+struct dirent *dptr;
+int main(int argc, char *argv[])
+{
+char buff[100];
+DIR *dirp;
+printf("\n\n Enter Directory Name");
+scanf("%s", buff);
+if((dirp=opendir(buff)) == NULL)
+{
+printf("The given directory does not exist");
+exit(1);
+while(dptr=readdir(dirp))
+{
+printf("%s\n",dptr->d_name);
+}
+closedir(dirp);
+}
+}
+
+
+
+2.SYSTEM CALLS OF UNIX(fork, getpid, exit,wait):
+
+PROGRAM:
+#include<stdio.h> // printf()
+#include<stdlib.h> // exit()
+
+#include<sys/types.h> // pid_t
+#include<sys/wait.h> // wait()
+#include<unistd.h> // fork
+int main(int argc, char **argv)
+{
+pid_t pid;
+pid = fork();
+if(pid==0)
+{
+printf("It is the child process and pid is %d\n",getpid());
+exit(0);
+}
+else if(pid > 0)
+{
+printf("It is the parent process and pid is %d\n",getpid());
+int status;
+wait(&status);
+printf("Child is reaped\n");
+}
+else
+{
+printf("Error in forking..\n");
+exit(EXIT_FAILURE);
+}
+return 0;
+}
+
