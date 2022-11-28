@@ -1,0 +1,1555 @@
+EXPERIMENT 1:
+ Basic Linux Commands (Process / File / Directory/ Memory / Disk / User / Filters / Pipes )
+
+1. PWD:
+student@ITP-CC1-9:~$ pwd
+/home/student
+
+2. CD:
+student@ITP-CC1-9:~$ cd
+student@ITP-CC1-9:~$ cd ..
+student@ITP-CC1-9:/home$ cd -
+/home/student
+student@ITP-CC1-9:~$ cd Documents
+student@ITP-CC1-9:~/Documents$ cd 20itr009
+student@ITP-CC1-9:~/Documents/20itr009$ cd -
+/home/student/Documents
+student@ITP-CC1-9:~/Documents$ cd -
+/home/student/Documents/20itr009
+student@ITP-CC1-9:~/Documents/20itr009$
+
+3. LS COMMAND:
+student@ITP-CC1-9:~/Documents/20itr009$ ls
+student@ITP-CC1-9:~/Documents/20itr009$ ls -r
+student@ITP-CC1-9:~/Documents/20itr009$ cd -
+/home/student/Documents
+student@ITP-CC1-9:~/Documents$ cd -
+/home/student/Documents/20itr009
+student@ITP-CC1-9:~/Documents/20itr009$ cd ..
+student@ITP-CC1-9:~/Documents$ cd ..
+student@ITP-CC1-9:~$ pwd
+/home/student
+student@ITP-CC1-9:~$ ls
+
+4.CAT COMMAND:
+student@ITP-CC1-9:~$ cat&gt;file1.txt
+kongu
+^C
+student@ITP-CC1-9:~$ cat&gt;file2.txt
+engineering
+^C
+student@ITP-CC1-9:~$ cat file1.txt file2.txt&gt;file3.txt
+student@ITP-CC1-9:~$ cat file3.txt
+kongu
+engineering
+student@ITP-CC1-9:~$ cat&gt;file4.txt
+^C
+student@ITP-CC1-9:~$ cat file1.txt file4.txt
+kongu
+student@ITP-CC1-9:~$ cat file4.txt
+
+5. CP COMMAND:
+student@ITP-CC1-9:~$ cp file1.txt file4.txt
+student@ITP-CC1-9:~$ cat file4.txt
+kongu
+
+6.MOVE
+student@ITP-CC1-9:~$ mv file4.txt kongu.txt
+student@ITP-CC1-9:~$ cat kongu.txt
+kongu
+
+7.MKDIR:
+student@ITP-CC1-9:~$ mkdir new
+student@ITP-CC1-9:~$ ls dir
+ls: cannot access &#39;dir&#39;: No such file or directory
+student@ITP-CC1-9:~$ ls new
+
+8.RMDIR:
+student@ITP-CC1-9:~$ rmdir new
+student@ITP-CC1-9:~$ ls new
+ls: cannot access &#39;new&#39;: No such file or directory
+student@ITP-CC1-9:~$ ls
+
+9.RM COMMAND:
+student@ITP-CC1-9:~$ rm file1.txt
+student@ITP-CC1-9:~$ ls
+
+10. LOCATE:
+student@ITP-CC1-9:~$ locate -i*kongu*home
+Command &#39;locate&#39; not found, but can be installed with:
+sudo apt install mlocate
+student@ITP-CC1-9:~$ locate file2.txt
+Command &#39;locate&#39; not found, but can be installed with:
+sudo apt install mlocate
+
+11. FIND COMMAND:
+tudent@ITP-CC1-9:~$ find file3.txt
+file3.txt
+student@ITP-CC1-9:~$ find new1.txt
+new1.txt
+
+12. GREP COMMAND:
+student@ITP-CC1-9:~$ cat&gt;n1.txt
+kongu engineering college.
+perundurai , Erode
+place of excellence
+^C
+student@ITP-CC1-9:~$ cat n1.txt
+kongu engineering college.
+perundurai , Erode
+place of excellence
+
+student@ITP-CC1-9:~$ grep college n1.txt
+kongu engineering college.
+
+13. DF COMMAND:
+tudent@ITP-CC1-9:~$ df
+13. HEAD COMMAND:
+student@ITP-CC1-9:~$ cat test1.txt
+cat: test1.txt: No such file or directory
+student@ITP-CC1-9:~$ cat&gt;test1.txt
+anu
+^C
+student@ITP-CC1-9:~$ cat text1.txt
+cat: text1.txt: No such file or directory
+student@ITP-CC1-9:~$ cat test1.txt
+student@ITP-CC1-9:~$ head -n 5 test1.txt
+anu
+abi
+arjun
+priys
+sanju
+
+15. TAIL COMMAND:
+student@ITP-CC1-9:~$ tail -n 2 test1.txt
+
+16. UNAME COMMAND:
+student@ITP-CC1-9:~$ uname
+Linux
+student@ITP-CC1-9:~$ uname -n
+ITP-CC1-9
+student@ITP-CC1-9:~$ uname -o
+GNU/Linux
+student@ITP-CC1-9:~$ uname -m
+x86_64
+student@ITP-CC1-9:~$ uname -r
+5.11.0-43-generic
+student@ITP-CC1-9:~$
+student@ITP-CC1-9:~$ uname -p
+x86_64
+
+17. TOP COMMAND:
+student@ITP-CC1-9:~$ top -v
+procps-ng 3.3.16
+Usage:
+top -hv | -bcEHiOSs1 -d secs -n max -u|U user -p pid(s) -o field -w [cols]
+student@ITP-CC1-9:~$ top
+
+18 HISTORY COMMAND:
+student@ITP-CC1-9:~$ history
+
+19. ECHO COMMAND:
+student@ITP-CC1-9:~$ echo hello
+hello
+student@ITP-CC1-9:~$ echo -e &quot;hello\nworld&quot;
+hello
+world
+student@ITP-CC1-9:~$ echo -n -e &quot;hello\nworlds&quot;
+hello
+worldsstudent@ITP-CC1-9:~$
+tudent@ITP-CC1-9:~$ echo &quot;The date is:$(date)&quot;
+
+20. CHOWN COMMAND:
+tudent@ITP-CC1-9:~$ chown --version
+.
+
+21. PING COMMAND:
+student@ITP-CC1-9:~$ ping google.com
+PING google.com (142.250.196.14) 56(84) bytes of data.
+tudent@ITP-CC1-9:~$ ping google.com
+
+22. WGET COMMAND:
+student@ITP-CC1-9:~$ wget tecmint.com/10-wget-command-examples-in-linux/
+--2022-08-04 15:43:44-- http://tecmint.com/10-wget-command-examples-in-linux/
+
+FILTER COMMANDS:
+SORT:
+
+student@ITP-CC1-9:~$ sort test1.txt
+
+UNIQ COMMAND:
+student@ITP-CC1-9:~$ uniq 1.txt
+hi
+bye
+bye
+
+WC COMMAND:
+student@ITP-CC1-9:~$ wc no1.txt
+3 5 20 no1.txt
+
+MORE:
+student@ITP-CC1-9:~$ more no1.txt
+hi guys
+hi guys
+bye
+student@ITP-CC1-9:~$ more -s no1.txt
+hi guys
+hi guys
+bye
+
+LESS:
+student@ITP-CC1-9:~$ less no1.txt
+hi guys
+hi guys
+bye
+
+EXPERIMENT 2
+Simple Shell programs - Arithmetic operations and String operations
+
+CREATE A FILE:
+student@ITP-CC1-20:~$ vi arith.sh
+
+PROGRAM:
+echo “enter num1”
+read a
+echo “ENTER NUM2:”
+read b
+sum=`expr $a + $b`
+echo “SUM IS: $sum”
+diff=`expr $a - $b`
+echo “DIFFERENCE IS: $diff”
+mul=`expr $a \* $b`
+echo “MULTIPLICATION IS:$mul”
+div=`expr $a / $b`
+echo “DIVISION IS:$div”
+mod=`expr $a % $b`
+echo “MODULO IS:$mod”
+
+
+
+TO RUN:
+student@ITP-CC1-20:~$ chmod +x arith.sh
+student@ITP-CC1-20:~$ ./arith.sh
+
+OUTPUT:
+“ENTER NUM1:”
+10
+“ENTER NUM2:”
+2
+“SUM IS: 12”
+“DIFFERENCE IS: 8”
+“MULTIPLICATION IS:20”
+“DIVISION IS:5”
+“MODULO IS:0”
+
+BASIC STRING OPERATIONS:
+
+CREATE A FILE:
+student@ITP-CC1-20:~$ vi string.sh
+
+PROGRAM:
+a="kongu"
+b="kongu"
+if [ $a = $b ]
+then
+echo "$a = $b : Both strings are same"
+else
+echo "$a = $b: Both strings are not same"
+fi
+if [ $a != $b ]
+then
+echo "$a != $b : Both strings are not same "
+else
+echo "$a != $b: Both strings are same"
+fi
+
+if [ -z $a ]
+then
+echo "-z $a : string is empty "
+else
+echo "-z $a : string is not empty"
+fi
+if [ -n $a ]
+then
+echo "-n $a : string is not empty"
+else
+echo "-n $a : string is empty"
+fi
+if [ $a ]
+then
+echo "$a : string is not empty"
+else
+echo "$a : string is empty"
+fi
+
+TO RUN:
+student@ITP-CC1-20:~$ chmod +x string.sh
+student@ITP-CC1-20:~$ ./string.sh
+
+OUTPUT:
+kongu = kongu: Both strings are same
+kongu = kongu : Both strings are same
+-z kongu : string is not empty
+-n kongu : string is not empty
+
+EXPERIMENT 3:
+Shell program using loops and conditional statements
+LOOPS:
+
+FACTORIAL OF A NUMBER:
+
+PROGRAM
+
+echo “enter the number”
+read num
+fact=1
+while [ $num -gt 1 ]
+do
+fact=$((fact*num))
+num=$((num-1))
+done
+echo “factorial is $fact”
+
+output:
+student@ITP-CC1-1:~/20itr009$ vi fact.sh
+student@ITP-CC1-1:~/20itr009$ chmod +x fact.sh
+student@ITP-CC1-1:~/20itr009$ ./fact.sh
+
+“enter the number”
+5
+“factorial is 120”
+student@ITP-CC1-1:~/20itr009$ ./fact.sh
+“enter the number”
+3
+“factorial is 6”
+
+FIBONACCI SERIES:
+
+PROGRAM
+
+echo “enter the number”
+read num
+a=0
+b=1
+count=2
+echo “fibonacci series”
+echo $a
+echo $b
+while [ $count -le $num ]
+do
+fib=`expr $a + $b`
+a=$b
+b=$fib
+echo $fib
+count=`expr $count + 1`
+done
+
+OUTPUT:
+
+student@ITP-CC1-1:~/20itr009$ vi fib.sh
+student@ITP-CC1-1:~/20itr009$ chmod +x fib.sh
+student@ITP-CC1-1:~/20itr009$ ./fib.sh
+“enter the number”
+5
+“fibonacci series”
+0
+1
+1
+2
+3
+5
+ CONDITIONAL STATEMENTS
+
+GREATEST OF TWO NUMBERS:
+PROGRAM
+echo “enter the number1”
+read a
+echo “enter the number2”
+read b
+if [ $a -gt $b ]
+then
+echo “ $a is greater”
+else
+echo “$b is greater”
+fi
+
+OUTPUT:
+student@ITP-CC1-1:~/20itr009$ vi gre.sh
+student@ITP-CC1-1:~/20itr009$ chmod +x gre.sh
+student@ITP-CC1-1:~/20itr009$ ./gre.sh
+“enter the number1”
+10
+“enter the number2”
+20
+“20 is greater”
+
+GREATEST OF THREE NUMBERS:
+
+PROGRAM
+echo “Enter the number1”
+read a
+echo “Enter the number2”
+read b
+echo “Enter the number3”
+read c
+if [ $a -gt $b ] && [ $a -gt $c ]
+then
+echo “ $a is greater”
+elif [ $b -gt $c ]
+then
+echo “$b is greater”
+else
+echo “$c is greater”
+fi
+
+OUTPUT:
+student@ITP-CC1-1:~/20itr009$ vi grea.sh
+student@ITP-CC1-1:~/20itr009$ chmod +x grea.sh
+student@ITP-CC1-1:~/20itr009$ vi grea.sh
+student@ITP-CC1-1:~/20itr009$ ./grea.sh
+“Enter the number1”
+20
+
+“Enter the number2”
+30
+“Enter the number3”
+10
+“30 is greater”
+student@ITP-CC1-1:~/20itr009$ ./grea.sh
+“Enter the number1”
+30
+“Enter the number2”
+20
+“Enter the number3”
+50
+“50 is greater”
+
+ODD OR EVEN:
+PROGRAM
+echo “Enter the number”
+read a
+if [ `expr $a % 2` -eq 0 ]
+then
+echo “$a is even number”
+else
+echo “$a is odd number”
+fi
+0
+
+OUTPUT:
+student@ITP-CC1-1:~/20itr009$ vi odd.sh
+student@ITP-CC1-1:~/20itr009$ chmod +x odd.sh
+student@ITP-CC1-1:~/20itr009$ ./odd.sh
+“Enter the number”
+25
+“25 is odd number”
+student@ITP-CC1-1:~/20itr009$ ./odd.sh
+“Enter the number”
+30
+“30 is even number”
+
+LEAP YEAR OR NOT
+PROGRAM
+echo “enter the year”
+read year
+if [ `expr $year % 400` -eq 0 ] || [ `expr $year % 100` -ne 0 ] && [ `expr $year % 4`
+-eq 0 ]
+then
+echo “$year is leap year”
+else
+echo “$year is not leap year”
+fi
+
+OUTPUT:
+student@ITP-CC1-1:~/20itr009$ vi leap.sh
+student@ITP-CC1-1:~/20itr009$ chmod +x leap.sh
+student@ITP-CC1-1:~/20itr009$ ./leap.sh
+“enter the year”
+2020
+“2020 is leap year”
+student@ITP-CC1-1:~/20itr009$ ./leap.sh
+“enter the year”
+2022
+“2022 is not leap year”
+
+
+
+
+
+EXPERIMENT 4
+Write a CPU bound C program and a I/O bound C program (e.g. use a number of printf statements within a while (1) loop). Compile and execute both of them. Observe the effect of their CPU share using the top display and comment.
+
+CPU BOUND:
+#include<stdio.h>
+#include<time.h>
+void main()
+{
+    clock_t start,end;
+    double runTime;
+    start =clock();
+    int i, num=1, primes=0;
+    int a;
+    while(num <=1000)
+    {
+        i=2;
+        while(i<=num)
+        {
+        if(num%i==0)
+        break;
+        i++;
+        
+    }
+    if(i==num)
+    primes++;
+    // system("clear");
+    printf("%d primes number \n",primes);
+    num++;
+    
+}
+end=clock();
+runTime =(end-start)/(double)CLOCKS_PER_SEC;
+printf("This machine calculated all %d prime numbers under 100 in %g seconds \n",primes,runTime);}
+
+OUTPUT:
+This machine calculated all 25 prime numbers under 100 in 0.000319 seconds
+
+I/O BOUND
+PROGRAM:
+
+#include<stdio.h>
+#include<time.h>
+void main()
+{
+    clock_t start,end;
+    double runTime;
+    start =clock();
+    int i, num=1, primes=0;
+    int a;
+    printf("Enter range:");
+    scanf("%d",&a);
+    while(num <=a)
+    {
+        i=2;
+        while(i<=num)
+        {
+        if(num%i==0)
+        break;
+        i++;
+        
+    }
+    if(i==num)
+    primes++;
+    // system("clear");
+    printf("%d primes number \n",primes);
+    num++;
+    
+}
+end=clock();
+runTime =(end-start)/(double)CLOCKS_PER_SEC;
+printf("This machine calculated all %d prime numbers under 100 in %g seconds \n",primes,runTime);}
+
+OUTPUT:
+
+enter range: 100
+This machine calculated all 25 prime numbers under 100 in 0.00062 seconds
+
+EXPERIMENT 5
+Write a C program to simulate UNIX commands like cp, ls, grep
+
+CP COMMAND:
+PROGRAM:
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+FILE *file1,*file2;
+char filename[100],c;
+printf("enter the filename for reading");
+scanf("%s",filename);
+file1=fopen(filename,"r");
+if(file1==NULL)
+{
+printf("cannot open the file %s \n",filename);
+exit(0);
+}
+printf("Enter the filename for writing");
+scanf("%s",filename);
+file2=fopen(filename,"w");
+if(file2==NULL)
+{
+printf("cannot open the file %s \n",filename);
+exit(0);
+}
+c=fgetc(file1);
+while (c != EOF)
+{
+fputc(c,file2);
+c=fgetc(file1);
+}
+printf("The contents are copied to file %s",filename);
+fclose(file1);
+fclose(file2);
+return 0;
+}
+
+output:
+student@ITP-CC1-19:~/20itr009$ gedit file.c
+^C
+student@ITP-CC1-19:~/20itr009$ gcc file.c
+student@ITP-CC1-19:~/20itr009$ ./a.out
+enter the filename for readingsamp.c
+Enter the filename for writingh1.txt
+The contents are copied to file h1.txt
+
+h1.txt:
+include <stdio.h>
+int main() {
+printf("hello");
+return 0;
+}
+
+samp.c
+include <stdio.h>
+int main() {
+printf("hello");
+return 0;
+}
+
+GREP COMMAND:
+PROGRAM:
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+void main(){
+FILE *file1;
+char filename[100],search[10],temp[10];
+printf("ENTER THE FILENAME ");
+scanf("%s",filename);
+printf("Enter the element to be searched");
+scanf("%s",search);
+file1=fopen(filename,"r");
+while (!feof(file1)){
+fgets(temp,1000,file1);
+if(strstr(temp,search)){
+printf("%s",temp);
+}
+}
+fclose(file1);
+}
+
+OUTPUT:
+student@ITP-CC1-19:~/20itr009$ gedit grep.c
+student@ITP-CC1-19:~/20itr009$ gcc grep.c
+student@ITP-CC1-19:~/20itr009$ ./a.out
+ENTER THE FILENAME mail.txt
+Enter the element to be searchedbye
+bye
+bye
+
+ls COMMAND:
+
+#include<stdio.h>
+#include<dirent.h>
+#include<stdlib.h>
+int main(){
+char dirname[20];
+DIR*p;
+struct dirent *d;
+printf("enter the directory name");
+scanf("%s",dirname);
+p=opendir(dirname);
+if(p==NULL)
+{
+printf("cannot find the directory");
+exit(-1);
+}
+while(d=readdir(p))
+{
+printf("%s\n",d->d_name);
+}}
+
+OUTPUT:
+student@ITP-CC1-19:~/20itr009$ gedit ls.c
+student@ITP-CC1-19:~/20itr009$ cd ..
+student@ITP-CC1-19:~$ gedit ls.c
+student@ITP-CC1-19:~$ gcc ls.c
+student@ITP-CC1-19:~$ ./a.out
+enter the directory name20itr009
+h1.txt
+..
+a.out
+.
+ls.c
+prg
+file.c
+samp1.c
+mail.txt
+grep.c
+prg.c
+samp.c
+
+EXPERIMENT 6
+Implementation of system calls - fork, exec, getpid, exit, wait, close, stat, opendir, readdir.
+1. SYSTEM CALLS FOR UNIX(opendir, closedir)
+
+PROGRAM:
+#include<stdio.h>
+#include<dirent.h>
+#include<stdlib.h>
+struct dirent *dptr;
+int main(int argc, char *argv[])
+{
+char buff[100];
+DIR *dirp;
+printf("\n\n Enter Directory Name");
+scanf("%s", buff);
+if((dirp=opendir(buff)) == NULL)
+{
+printf("The given directory does not exist");
+exit(1);
+while(dptr=readdir(dirp))
+{
+printf("%s\n",dptr->d_name);
+}
+closedir(dirp);
+}
+}
+
+OUTPUT:
+student@ITP-CC1-19:~$ ./a.out
+enter the directory name20itr009
+h1.txt
+dir.c
+..
+a.out
+.
+ls.c
+prg
+file.c
+samp1.c
+mail.txt
+OS-LAB.pdf
+grep.c
+prg.c
+samp.c
+student@ITP
+
+2.SYSTEM CALLS OF UNIX(fork, getpid, exit,wait):
+
+PROGRAM:
+#include<stdio.h> // printf()
+#include<stdlib.h> // exit()
+
+#include<sys/types.h> // pid_t
+#include<sys/wait.h> // wait()
+#include<unistd.h> // fork
+int main(int argc, char **argv)
+{
+pid_t pid;
+pid = fork();
+if(pid==0)
+{
+printf("It is the child process and pid is %d\n",getpid());
+exit(0);
+}
+else if(pid > 0)
+{
+printf("It is the parent process and pid is %d\n",getpid());
+int status;
+wait(&status);
+printf("Child is reaped\n");
+}
+else
+{
+printf("Error in forking..\n");
+exit(EXIT_FAILURE);
+}
+return 0;
+}
+
+OUTPUT:
+student@ITP-CC1-19:~/20itr009$ gedit fork.c
+^C
+student@ITP-CC1-19:~/20itr009$ gcc fork.c
+student@ITP-CC1-19:~/20itr009$ ./a.out
+It is the parent process and pid is 5830
+It is the child process and pid is 5831
+Child is reaped
+
+EXPERIMENT 7:
+I/0 SYSTEM CALLS:
+PROGRAM
+#include<stdio.h>
+#include<unistd.h>
+#include<fcntl.h>
+int main(){
+int fd;
+char buffer[50];
+char msg[50]="good";
+fd= open("samp.txt",O_RDWR);
+printf("\n fd=%d",fd);
+if( fd != -1){
+ printf("%d has the write to read and write \n ",fd);
+ write(fd,msg,sizeof(msg));
+ //lseek(fd,0,SEEK_SET);
+ read(fd,buffer,sizeof(msg));
+ printf("%s the content in the file",buffer);
+ close(fd);
+ }
+ return 0;
+ }
+
+OUTPUT:
+student@ITP-CC1-19:~/20itr009$ gedit new.c
+student@ITP-CC1-19:~/20itr009$ gcc new.c
+student@ITP-CC1-19:~/20itr009$ ./a.out
+
+ fd=33 has the write to read and write
+  the content in the filestudent@ITP-CC1-19:~/20itr009$
+
+EXPERIMENT 8:
+Write a C-program to implement the producer – consumer problem using semaphores
+
+PROGRAM:
+#include<stdio.h>
+int mutex=1,full=0,empty=3,x=0;
+main() {
+int n;
+void producer();
+void consumer();
+int wait(int);
+int signal(int);
+printf("\n1.PRODUCER\n2.CONSUMER\n3.EXIT\n");
+while(1) {
+printf("\nENTER YOUR CHOICE\n");
+scanf("%d",&n); switch(n) {
+case 1:
+if((mutex==1)&&(empty!=0)) producer();
+ else printf("BUFFER IS FULL);
+break;
+case 2: if((mutex==1)&&(full!=0)) consumer();
+else printf("BUFFER IS EMPTY");
+ break;
+case 3: exit(0);
+break;
+} } }
+int wait(int s) {
+return(--s);
+} int signal(int s) {
+ return(++s);
+}
+void producer() {
+ mutex=wait(mutex);
+ full=signal(full);
+empty=wait(empty);
+ x++;
+printf("\nproducer produces the item%d",x);
+mutex=signal(mutex);
+}
+void consumer() {
+mutex=wait(mutex);
+full=wait(full);
+empty=signal(empty);
+printf("\n consumer consumes item%d",x);
+x--;
+mutex=signal(mutex);
+}
+
+
+
+EXPERIMENT 9:
+Write a C Program to implement IPC using Pipe
+
+ONE WAY COMMUNICATION:
+PROGRAM:
+#include<stdio.h>
+#include<unistd.h>
+
+int main() {
+   int pipefds[2];
+   int returnstatus;
+   int pid;
+   char writemessages[2][20]={"Hi", "Hello"};
+   char readmessage[20];
+   returnstatus = pipe(pipefds);
+   if (returnstatus == -1) {
+      printf("Unable to create pipe\n");
+      return 1;
+   }
+   pid = fork();
+   
+   // Child process
+   if (pid == 0) {
+      read(pipefds[0], readmessage, sizeof(readmessage));
+      printf("Child Process - Reading from pipe – Message 1 is %s\n", readmessage);
+      read(pipefds[0], readmessage, sizeof(readmessage));
+      printf("Child Process - Reading from pipe – Message 2 is %s\n", readmessage);
+   } else { //Parent process
+      printf("Parent Process - Writing to pipe - Message 1 is %s\n", writemessages[0]);
+      write(pipefds[1], writemessages[0], sizeof(writemessages[0]));
+      printf("Parent Process - Writing to pipe - Message 2 is %s\n", writemessages[1]);
+      write(pipefds[1], writemessages[1], sizeof(writemessages[1]));
+   }
+   return 0;
+}
+
+OUTPUT:
+Parent Process - Writing to pipe - Message 1 is Hi
+Parent Process - Writing to pipe - Message 2 is Hello
+
+TWO WAY COMMUNICATION:
+#include<stdio.h>
+#include<unistd.h>
+
+int main() {
+   int pipefds1[2], pipefds2[2];
+   int returnstatus1, returnstatus2;
+   int pid;
+   char pipe1writemessage[20] = "Hi";
+   char pipe2writemessage[20] = "Hello";
+   char readmessage[20];
+   returnstatus1 = pipe(pipefds1);
+   
+   if (returnstatus1 == -1) {
+      printf("Unable to create pipe 1 \n");
+      return 1;
+   }
+   returnstatus2 = pipe(pipefds2);
+   
+   if(returnstatus2 == -1) {
+      printf("Unable to create pipe 2 \n");
+      return 1;
+   }
+   pid = fork();
+   if(pid != 0){
+      close(pipefds1[0]);
+      close(pipefds2[1]);
+      printf("In Parent: Writing to pipe 1 – Message is %s\n", pipe1writemessage);
+      write(pipefds1[1], pipe1writemessage, sizeof(pipe1writemessage));
+      read(pipefds2[0], readmessage, sizeof(readmessage));
+      printf("In Parent: Reading from pipe 2 – Message is %s\n", readmessage);
+   }
+   else{
+      close(pipefds1[1]);
+      close(pipefds2[0]);
+      read(pipefds1[0], readmessage, sizeof(readmessage));
+      printf("In Child: Reading from pipe 1 – Message is %s\n", readmessage);
+      printf("In Child: Writing to pipe 2 – Message is %s\n", pipe2writemessage);
+      write(pipefds2[1], pipe2writemessage, sizeof(pipe2writemessage));
+   }
+   return 0;
+}
+
+OUTPUT:
+
+In Parent: Writing to pipe 1 – Message is Hi
+In Child: Reading from pipe 1 – Message is Hi
+In Child: Writing to pipe 2 – Message is Hello
+In Parent: Reading from pipe 2 – Message is Hello
+
+EXPERIMENT 10:
+Write a C program perform Round Robin CPU scheduling algorithm by reading all the necessary data from file.
+
+
+PROGRAM:
+input.txt:
+3
+5
+0  25
+1  30
+2  54
+
+roundrobin.c
+#include <stdio.h>
+#include <stdlib.h>
+int main(){
+        int at[10];
+        int bt[10],rt[10];
+        
+        
+        int count,j,n,time,remain,flag=0,time_quantum;
+       int wait_time=0,turnaround_time=0;
+
+	
+	FILE* fp = fopen("input.txt", "r");
+	int max,i,q;
+       fscanf(fp,"%d", &n);
+       remain=n;
+        fscanf(fp,"%d", &time_quantum);
+	for(int i = 0; i < n; i++)
+	{
+	    	fscanf(fp,"%d", &at[i]);
+	    	fscanf(fp,"%d",&bt[i]);
+	    	rt[i]=bt[i];
+	    	    
+	}
+	printf("\nTotal No of Processes= %d\n",n);
+	printf("Time Quantum = %d\n",time_quantum);
+	printf("\n\nProcessNo |Arrival Time|Burst Time\n");
+	for(int i = 0; i < n; i++)
+	{
+	    
+	    printf("Process %d\t %d\t  %d \n",i,at[i],bt[i]);
+	    
+	}
+	
+	
+	for(time=0,count=0;remain!=0;)
+	  {
+	      if(rt[count]<=time_quantum && rt[count]>0)
+	        {
+	            time+=rt[count];
+	            rt[count]=0;
+	            flag=1;
+	        }
+	       else if(rt[count]>0)
+	        {
+	            rt[count]-=time_quantum;
+	            time+=time_quantum;
+	        }
+	       if(rt[count]==0 && flag==1)
+	        {
+	            remain--;
+	           // printf("P[%d]\t|\t%d\t|\t%d\n",count+1,time-at[count],time-at[count]-bt[count]);
+	            wait_time+=time-at[count]-bt[count];
+	            turnaround_time+=time-at[count];
+	            flag=0;
+	        }
+	        if(count==n-1)
+	           count=0;
+	        else if(at[count+1]<=time)
+	           count++;
+	        else
+	           count=0;
+	  }
+  printf("\nAverage Waiting Time= %f\n",wait_time*1.0/n);
+  printf("Avg Turnaround Time = %f \n",turnaround_time*1.0/n);	
+	return(0);
+
+
+}
+OUTPUT:
+student@ITP-CC1-19:~/20itr009$ gedit input.txt
+student@ITP-CC1-19:~/20itr009$ gedit roundrobin.c
+student@ITP-CC1-19:~/20itr009$ gcc roundrobin.c
+student@ITP-CC1-19:~/20itr009$ ./a.out
+
+Total No of Processes= 3
+Time Quantum = 5
+
+
+ProcessNo |Arrival Time|Burst Time
+Process 0	 0	  25
+Process 1	 1	  30
+Process 2	 2	  54
+
+Average Waiting Time= 47.333333
+Avg Turnaround Time = 83.666667
+
+ASSIGNMENT PROBLEM1:
+
+BANKERS ALGORITHM:
+#include<stdio.h>
+#include<conio.h>
+int max[100][100];
+int alloc[100][100];
+int need[100][100];
+int avail[100];
+int n,r;
+void input();
+void show();
+void cal();
+int main()
+{
+int i,j;
+printf("********** Baner's Algo ************\n");
+input();
+show();
+cal();
+getch();
+return 0;
+}
+void input()
+{
+int i,j;
+printf("Enter the no of Processes\t");
+
+scanf("%d",&n);
+printf("Enter the no of resources instances \t");
+scanf("%d",&r);
+printf("Enter the Max Matrix\n");
+for(i=0;i<n;i++) {
+for(j=0;j<r;j++) {
+scanf("%d",&max[i][j]);
+}}
+printf("Enter the Allocation Matrix\n");
+for(i=0;i<n;i++) {
+for(j=0;j<r;j++) {
+scanf("%d",&alloc[i][j]);
+}}
+printf("Enter the available Resources\n");
+for(j=0;j<r;j++) {
+scanf("%d",&avail[j]);
+}}
+void show() {
+int i,j
+;
+printf("Process\t Allocation\t Max\t Available\t");
+for(i=0;i<n;i++) {
+printf("\nP%d\t ",i+1);
+for(j=0;j<r;j++) {
+printf("%d ",alloc[i][j]); }
+printf("\t");
+for(j=0;j<r;j++) {
+printf("%d ",max[i][j]); }
+printf("\t");
+if(i==0) {
+for(j=0;j<r;j++)
+printf("%d ",avail[j]);
+}}}
+void cal()
+
+{
+int finish[100],temp,need[100][100],flag=1,k,c1=0;
+int safe[100];
+int i,j;
+for(i=0;i<n;i++) {
+finish[i]=0; }
+//find need matrix
+for(i=0;i<n;i++) {
+for(j=0;j<r;j++) {
+need[i][j]=max[i][j]-alloc[i][j];
+}}
+printf("\n");
+while(flag) {
+flag=0;
+for(i=0;i<n;i++) {
+int c=0;
+for(j=0;j<r;j++) {
+if((finish[i]==0)&&(need[i][j]<=avail[j])) {
+c++;
+if(c==r) {
+for(k=0;k<r;k++) {
+avail[k]+=alloc[i][j];
+finish[i]=1;
+flag=1; }
+printf("P%d->",i);
+if(finish[i]==1) {
+i=n;
+}}}}}}
+for(i=0;i<n;i++) {
+if(finish[i]==1) {
+c1++;
+
+}
+else
+{printf("P%d->",i);
+}}
+if(c1==n)
+{printf("\n The system is in safe state");
+}
+else
+{
+printf("\n Process are in dead lock");
+printf("\n System is in unsafe state");
+}}
+
+OUTPUT:
+********** Baner's Algo ************
+Enter the no of Processes       5
+Enter the no of resources instances     3
+Enter the Max Matrix
+7 5 3
+3 2 2
+9 0 2
+2 2 2
+4 3 3
+Enter the Allocation Matrix
+0 1 00
+2 0 0
+3 0 2
+2 1 1
+0 0 2
+Enter the available Resources
+3 3 2
+Process  Allocation      Max     Available
+P1       0 1 0  7 5 3   3 3 2
+P2       2 0 0  3 2 2
+P3       3 0 2  9 0 2
+P4       2 1 1  2 2 2
+P5       0 0 2  4 3 3
+P1->P3->P4->P2->P0->
+ The system is in safe state
+
+
+
+
+
+
+
+ASSIGNMENT PROBLEM2:
+THREADING:
+PROGRAM:
+#include<stdio.h>
+#include<string.h>
+#include<pthread.h>
+#include<stdlib.h>
+#include<unistd.h>
+pthread_t tid[2];
+void* doSomeThing(void *arg)
+{
+ unsigned long i = 0;
+ pthread_t id = pthread_self();
+ if(pthread_equal(id,tid[0]))
+ {
+ printf("\n First thread processing\n");
+ }
+ else
+ {
+ printf("\n Second thread processing\n");
+ }
+ for(i=0; i<(0xFFFFFFFF);i++);
+ return NULL;
+}
+int main(void)
+{
+ int i = 0;
+ int err;
+ while(i < 2)
+ {
+ err = pthread_create(&(tid[i]), NULL, &doSomeThing, NULL);
+ if (err != 0)
+ printf("\ncan't create thread :[%s]", strerror(err));
+ else
+ printf("\n Thread created successfully\n");
+ i++;
+ }
+ sleep(5);
+ return 0;
+}
+
+OUTPUT:
+
+THREADING:
+
+#include<pthread.h>
+#include<stdio.h>
+#define NUM_THREADS 3
+int a,b,evensum=0,sumn=0,oddsum=0,evenarr[50],oddarr[50];
+void *Even(void *threadid)
+{
+int i,n;
+a=0; n=(int)threadid;
+for(i=1;i<=n;i++)
+{
+if(i%2==0)
+{
+evenarr[a]=i;
+evensum=evensum+i;
+a++;
+}
+}
+}
+void *Odd(void *threadid)
+{
+int i,n;
+b=0;
+n=(int)threadid;
+for(i=0;i<=n;i++)
+{
+if(i%2!=0)
+{
+oddarr[b]=i;
+oddsum=oddsum+i;
+b++;
+}
+
+}
+}
+void *SumN(void *threadid)
+{
+int i,n;
+n=(int)threadid;
+for(i=1;i<=n;i++)
+{
+sumn=sumn+i;
+}
+}
+int main()
+{
+pthread_t threads[NUM_THREADS];
+int i,t;
+printf("Enter a number\n");
+scanf("%d",&t);
+pthread_create(&threads[0],NULL,Even,(void *)t);
+pthread_create(&threads[1],NULL,Odd,(void *)t);
+pthread_create(&threads[2],NULL,SumN,(void *)t);
+for(i=0;i<NUM_THREADS;i++)
+{
+pthread_join(threads[i],NULL);
+}
+printf("The sum of first N natural nos is %d\n",sumn);
+printf("The sum of first N even natural nos is %d\n",evensum);
+printf("The sum of first N odd natural nos is %d\n",oddsum);
+printf("The first N even natural nos is----\n");
+for(i=0;i<a;i++)
+printf("%d\n",evenarr[i]);
+printf("The first N odd natural nos is----\n");
+for(i=0;i<b;i++)
+printf("%d\n",oddarr[i]);
+pthread_exit(NULL);
+}
+
+OUTPUT:
+Enter a number
+10
+The sum of first N natural nos is 55
+The sum of first N even natural nos is 30
+The sum of first N odd natural nos is 25
+The first N even natural nos is----
+2
+4
+6
+8
+10
+The first N odd natural nos is----
+1
+3
+5
+7
+9
+
+SYNCHRONIZATION:
+READERS-WRITERS PROBLEM:
+PROGRAM
+mesg.h:
+
+#include<sys/types.h>
+#include<sys/ipc.h>
+#include<sys/msg.h>
+#include<stdio.h>
+#include<stdlib.h>
+#define MKEY1 5543L
+#define MKEY2 4354L
+#define PERMS 0666
+typedef struct
+{
+long mtype;
+char mdata[50];
+
+}mesg;
+
+
+
+
+sender1.c:
+
+#include<unistd.h>
+#include "mesg.h"
+mesg msg;
+int main()
+{
+int mq_id;
+int n;
+if((mq_id=msgget(MKEY1,PERMS|IPC_CREAT))<0)
+{
+printf("Sender: Error creating message");
+exit(1);
+}
+msg.mtype=1111L;
+n=read(0,msg.mdata,50);
+msg.mdata[n]='\0';
+msgsnd(mq_id,&msg,50,0);
+}
+
+receiver1.c:
+
+#include<unistd.h>
+#include "mesg.h"
+mesg msg;
+ int main()
+{
+int mq_id;
+int n;
+if( ( mq_id=msgget(MKEY1, PERMS|IPC_CREAT ) ) < 0)
+{
+printf("receiver: Error opening message");
+exit(1);
+}
+msgrcv(mq_id,&msg,50,1111L,0);
+write(1,msg.mdata,50);
+msgctl(mq_id,IPC_RMID,NULL);
+}
+
+OUTPUT:
+student@ITP-CC1-19:~/20itr009$ gedit sender1.c
+student@ITP-CC1-19:~/20itr009$ gedit receiver1.c
+student@ITP-CC1-19:~/20itr009$ gcc sender1.c
+sender1.c:2:10: fatal error: mesg.h: No such file or directory
+    2 | #include "mesg.h"
+      |          ^~~~~~~~
+compilation terminated.
+student@ITP-CC1-19:~/20itr009$ gedit sender1.c
+student@ITP-CC1-19:~/20itr009$ gcc sender1.c
+sender1.c:2:18: warning: extra tokens at end of #include directive
+    2 | #include "mesg.h";
+      |                  ^
+sender1.c:2:10: fatal error: mesg.h: No such file or directory
+    2 | #include "mesg.h";
+      |          ^~~~~~~~
+compilation terminated.
+student@ITP-CC1-19:~/20itr009$ gedit mesg.h
+student@ITP-CC1-19:~/20itr009$ gcc sender1.c
+sender1.c:2:18: warning: extra tokens at end of #include directive
+    2 | #include "mesg.h";
+      |                  ^
+student@ITP-CC1-19:~/20itr009$ gedit sender1.c
+student@ITP-CC1-19:~/20itr009$ gcc sender1.c
+student@ITP-CC1-19:~/20itr009$ ./a.out
+kongu engineering college
+student@ITP-CC1-19:~/20itr009$ gcc receiver1.c
+student@ITP-CC1-19:~/20itr009$ ./a.out
+kongu engineering college
+
+ASSIGNMENT 3:
+FIFO REPLACEMENT ALGRORITHM
+PROGRAM
+#include <stdio.h>
+int main()
+{
+int referenceString[10], pageFaults = 0, m, n, s, pages, frames;
+printf("\nEnter the number of Pages:\t");
+scanf("%d", &pages);
+printf("\nEnter reference string values:\n");
+for( m = 0; m < pages; m++)
+{
+   printf("Value No. [%d]:\t", m + 1);
+   scanf("%d", &referenceString[m]);
+}
+printf("\n What are the total number of frames:\t");
+{
+   scanf("%d", &frames);
+}
+int temp[frames];
+for(m = 0; m < frames; m++)
+{
+  temp[m] = -1;
+}
+for(m = 0; m < pages; m++)
+{
+  s = 0;
+  for(n = 0; n < frames; n++)
+   {
+      if(referenceString[m] == temp[n])
+         {
+            s++;
+            pageFaults--;
+         }
+   }    
+   pageFaults++;
+   if((pageFaults <= frames) && (s == 0))
+      {
+        temp[m] = referenceString[m];
+      }  
+   else if(s == 0)
+      {
+        temp[(pageFaults - 1) % frames] = referenceString[m];
+      }
+      printf("\n");
+      for(n = 0; n < frames; n++)
+       {    
+         printf("%d\t", temp[n]);
+       }
+}
+printf("\nTotal Page Faults:\t%d\n", pageFaults);
+return 0;
+}
+OUTPUT:
+student@ITP-CC1-19:~/20itr009$ gedit fifo.c
+^C
+student@ITP-CC1-19:~/20itr009$ gcc fifo.c
+student@ITP-CC1-19:~/20itr009$ ./a.out
+
+Enter the number of Pages:	22
+
+Enter reference string values:
+Value No. [1]:	7
+Value No. [2]:	0
+Value No. [3]:	1
+Value No. [4]:	2
+Value No. [5]:	0
+Value No. [6]:	3
+Value No. [7]:	0
+Value No. [8]:	4
+Value No. [9]:	2
+Value No. [10]:	3
+Value No. [11]:	0
+Value No. [12]:	3
+Value No. [13]:	0
+Value No. [14]:	3
+Value No. [15]:	0
+Value No. [16]:	3
+Value No. [17]:	2
+Value No. [18]:	1
+Value No. [19]:	2
+Value No. [20]:	0
+Value No. [21]:	1
+Value No. [22]:	7
+
+ What are the total number of frames:	0
+Floating point exception (core dumped)
+student@ITP-CC1-19:~/20itr009$ ./a.out
+
+Enter the number of Pages:	22
+
+Enter reference string values:
+Value No. [1]:	7
+Value No. [2]:	0
+Value No. [3]:	1
+Value No. [4]:	2
+Value No. [5]:	0
+Value No. [6]:	3
+Value No. [7]:	0
+Value No. [8]:	4
+Value No. [9]:	2
+Value No. [10]:	3
+Value No. [11]:	0
+Value No. [12]:	3
+Value No. [13]:	0
+Value No. [14]:	3
+Value No. [15]:	2
+Value No. [16]:	1
+Value No. [17]:	2
+Value No. [18]:	0
+Value No. [19]:	1
+Value No. [20]:	7
+Value No. [21]:	0
+Value No. [22]:	1
+
+ What are the total number of frames:	3
+
+7	-1	-1	
+7	0	-1	
+7	0	1	
+2	0	1	
+2	0	1	
+2	3	1	
+2	3	0	
+4	3	0	
+4	2	0	
+4	2	3	
+0	2	3	
+0	2	3	
+0	2	3	
+0	2	3	
+0	2	3	
+0	1	3	
+0	1	2	
+0	1	2	
+0	1	2	
+7	1	2	
+7	0	2	
+7	0	1	
+Total Page Faults:	15
+*** stack smashing detected ***: terminated
+Aborted (core dumped)
